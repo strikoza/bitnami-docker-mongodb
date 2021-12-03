@@ -388,7 +388,7 @@ $ docker run --name mongodb-secondary \
   --link mongodb-primary:primary \
   -e MONGODB_REPLICA_SET_MODE=secondary \
   -e MONGODB_ADVERTISED_HOSTNAME=mongodb-secondary \
-  -e MONGODB_INITIAL_PRIMARY_HOST=primary \
+  -e MONGODB_INITIAL_PRIMARY_HOST=mongodb-primary \
   -e MONGODB_INITIAL_PRIMARY_PORT_NUMBER=27017 \
   -e MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD=password123 \
   -e MONGODB_REPLICA_SET_KEY=replicasetkey123 \
@@ -406,7 +406,7 @@ $ docker run --name mongodb-arbiter \
   --link mongodb-primary:primary \
   -e MONGODB_REPLICA_SET_MODE=arbiter \
   -e MONGODB_ADVERTISED_HOSTNAME=mongodb-arbiter \
-  -e MONGODB_INITIAL_PRIMARY_HOST=primary \
+  -e MONGODB_INITIAL_PRIMARY_HOST=mongodb-primary \
   -e MONGODB_INITIAL_PRIMARY_PORT_NUMBER=27017 \
   -e MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD=password123 \
   -e MONGODB_REPLICA_SET_KEY=replicasetkey123 \
